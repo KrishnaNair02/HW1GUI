@@ -1,0 +1,64 @@
+html {background-color: midnightblue}
+
+.border {
+    border: 4px solid black;
+}
+
+/* Grid Display*/
+
+.gridContainer {
+    padding: 0;
+    list-style-type: none;
+    background-color: midnightblue;
+    display: grid;
+    height: 700px;
+    grid-template-columns: [start] 25% [line1] 25% [line2] 25% [line3] 25% [end];
+    grid-template-rows: [row1-start] 16% [row1-end] 16% [row2-end] 16% [row3-end] 16% [row4-end] 16% [row5-end] 16% [row6-end];
+
+        grid-template-areas:
+        "header header header header"
+        "item1 item1 item2 item2"
+        "item1 item1 item2 item2"
+        "item1 item1 item2 item2"
+        "item1 item1 item2 item2"
+        "footer footer footer footer";
+}
+
+.header{
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: row1-start;
+    grid-row-end: row1-end;
+    justify-self: center;
+    align-self: center;
+    color: white;
+}
+
+#req {
+    color: white;
+    padding: 1px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: black;
+}
+
+#center {
+    text-align: center;
+}
+
+#item1, #item1- {
+    grid-column: start / line2;
+    grid-row: row1-end / row5-end;
+    background-color: aqua;
+    text-wrap: normal;
+    border: 8px solid black;
+}
+
+#item2, #item2- {
+    grid-column: line2 / end;
+    grid-row: row1-end / row5-end;
+    background-color: green;
+}
